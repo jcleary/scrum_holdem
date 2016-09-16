@@ -1,0 +1,29 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    / The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %title Scrum Hold'em
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
+  %body
+    .container
+      .header.clearfix
+        %nav
+          %ul.nav.nav-pills.pull-right
+            %li.active{:role => "presentation"}
+              %a{:href => "#"} Home
+            %li{:role => "presentation"}
+              %a{:href => "#"} About
+            %li{:role => "presentation"}
+              %a{:href => "#"} Contact
+        %h3.text-muted Project name
+      = yield
+      %footer.footer
+        %p © 2016 Company, Inc.
+    / /container
