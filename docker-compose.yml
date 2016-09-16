@@ -1,0 +1,18 @@
+version: '2'
+services:
+  scrum.app:
+    build: .
+    # command: sleep infinity
+    command: bash -c 'bundle && rake tmp:clear tmp:pids:clear tmp:create && bundle exec rails server --bind 0.0.0.0'
+    volumes:
+      - .:/app
+    links:
+      - scrum.redis
+    expose:
+      - '3000'
+    environment:
+      - REDIS_URL=redis://scrum.redis:6379
+
+  scrum.redis:
+    image: redis:3.0
+

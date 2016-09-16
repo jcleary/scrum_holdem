@@ -9,7 +9,7 @@
     %tr
       %td
         %button.btn.btn-info.btn-vote= points
-      %td="#{count} votes"
+      %td= count
       %td
         = @game.votes.current.where(points: points).map {|v|v.player.name}.join ', '
 
