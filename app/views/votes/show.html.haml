@@ -1,9 +1,15 @@
 %h1 Votes
-- scores = @game.votes.group(:points).count.sort_by { |k,v| k }
-- scores.each do |points, count|
-  .row
-    .btn.btn-primary.btn-vote= points
-    - @game.votes.where(points: points).each do |vote|
-      .btn.btn-info.btn-vote-name= vote.player.name
-
+%table.table.table-striped
+  %tr
+    %th Points
+    %th Votes
+    %th Players
+  - scores = @game.votes.group(:points).count.sort_by { |k,v| -v }
+  - scores.each do |points, count|
+    %tr
+      %td
+        %button.btn.btn-info.btn-vote= points
+      %td="#{count} votes"
+      %td
+        = @game.votes.where(points: points).map {|v|v.player.name}.join ', '
 
