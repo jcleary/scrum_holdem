@@ -3,7 +3,7 @@ class CreateVotes < ActiveRecord::Migration[5.0]
     create_table :votes do |t|
       t.integer :player_id
       t.integer :points
-      t.boolean :current
+      t.boolean :current, default: true
 
       t.timestamps
     end

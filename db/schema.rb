@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 20160916172612) do
   create_table "votes", force: :cascade do |t|
     t.integer  "player_id"
     t.integer  "points"
-    t.boolean  "current"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "current",    default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
 end

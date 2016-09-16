@@ -4,12 +4,12 @@
     %th Points
     %th Votes
     %th Players
-  - scores = @game.votes.group(:points).count.sort_by { |k,v| -v }
+  - scores = @game.votes.current.group(:points).count.sort_by { |k,v| -v }
   - scores.each do |points, count|
     %tr
       %td
         %button.btn.btn-info.btn-vote= points
       %td="#{count} votes"
       %td
-        = @game.votes.where(points: points).map {|v|v.player.name}.join ', '
+        = @game.votes.current.where(points: points).map {|v|v.player.name}.join ', '
 
