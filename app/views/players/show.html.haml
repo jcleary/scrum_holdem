@@ -1,0 +1,12 @@
+%h1=" Game: #{@player.game.name}"
+%h5=" Organiser: #{@player.game.organiser.name}"
+%h5=" Players: #{@player.game.players.pluck(:name).join(', ')}"
+.row
+  .panel.panel-default
+    .panel-heading Vote
+    .panel-body
+      - story_point_values.each do |points|
+        = link_to points, votes_path('vote[player_id]' => @player.id, 'vote[points]' => points), :method => :post, class: 'btn btn-success btn-lg'
+
+
+
