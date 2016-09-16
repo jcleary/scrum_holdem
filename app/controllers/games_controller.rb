@@ -8,6 +8,12 @@ class GamesController < ApplicationController
     game = Game.new(game_params)
     game.save
 
+    organiser = Player.new(name: params[:game][:organiser_name], game: game)
+    organiser.save
+
+    game.organiser = organiser
+    game.save
+
     redirect_to game_path(game)
   end
 
