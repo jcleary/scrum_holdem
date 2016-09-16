@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'haml'
 gem 'redis', '~> 3.0'
+gem 'simple_form'
 
 group :development, :test do
   gem 'byebug', platform: :mri

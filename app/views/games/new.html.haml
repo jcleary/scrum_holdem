@@ -1,12 +1,10 @@
 .jumbotron
   %h1 Create A Game
   %p.lead Create a new game of Scrum Hold'em
-  %form
+  = simple_form_for @game, url: {action: 'create'} do |f|
     .form-group
-      %label.sr-only{:for => "organisers_name"} Your name (organiser)
-      %input#organisers_name.form-control{:placeholder => "Your name (organiser)", :type => "text"}
+      =f.input :organiser_name, input_html: { class: 'form-control'}, placeholder: 'Your name (organiser)', label_html: { class: 'sr-only' }
     .form-group
-      %label.sr-only{:for => "name"} Game/Project/Company name
-      %input#game_pin.form-control{:placeholder => "Game/Project/Company", :type => "text"}
+      =f.input :name, input_html: { class: 'form-control'} , placeholder: 'Game/Project/Company', label_html: { class: 'sr-only' }
     .row
       %button.btn.btn-success{:type => "submit"} Create Game
