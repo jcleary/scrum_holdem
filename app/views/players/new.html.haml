@@ -1,0 +1,14 @@
+
+.jumbotron
+  %h1 Join A Game
+  %p.lead Join an existing game of Scrum Hold'em enter your name and the game PIN
+  %form
+    .form-group
+      %label.sr-only{:for => "organisers_name"} Your name
+      %input#organisers_name.form-control{:placeholder => "Your name", :type => "text"}
+    .form-group
+      %label.sr-only{:for => "game_pin"} Game PIN
+      %input#game_pin.form-control{:placeholder => "Game PIN", :type => "password"}
+    .row
+      %button.btn.btn-success{:type => "submit"} Join
+
