@@ -17,13 +17,11 @@
         %nav
           %ul.nav.nav-pills.pull-right
             %li.active{:role => "presentation"}
-              %a{:href => "#"} Home
+              %a{:href => root_path} Join Game
             %li{:role => "presentation"}
-              %a{:href => "#"} About
-            %li{:role => "presentation"}
-              %a{:href => "#"} Contact
+              %a{:href => new_game_path} Create Game
         %h3.text-muted Scrum Hold'em
       = yield
       %footer.footer
         %p © 2016 Createk Labs Ltd.
-    / /container
+

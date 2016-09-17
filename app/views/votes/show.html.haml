@@ -13,3 +13,8 @@
       %td
         = @game.votes.current.where(points: points).map {|v|v.player.name}.join ', '
 
+.text-center
+  = link_to '< Re-Vote', player_path(@vote.player),  class: 'btn btn-success btn-lg'
+  = link_to 'Next Story', player_path(@vote.player),  class: 'btn btn-primary btn-lg'
+
+%p

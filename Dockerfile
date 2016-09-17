@@ -1,4 +1,4 @@
-FROM createkio/cr-myrewards:base-2.2.4
+FROM jcleary/scrum_holdem:base-2.2.4
 
 MAINTAINER CreatekIO
 
