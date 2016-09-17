@@ -4,9 +4,9 @@
 .row
   .panel.panel-default
     .panel-heading Vote
-    .panel-body
+    .panel-body.text-center
       - story_point_values.each do |points|
-        = link_to points, votes_path('vote[player_id]' => @player.id, 'vote[points]' => points), :method => :post, class: 'btn btn-success btn-lg'
+        = link_to points, votes_path('vote[player_id]' => @player.id, 'vote[points]' => points), :method => :post, class: 'btn btn-success btn-vote-lg'
 
 
 

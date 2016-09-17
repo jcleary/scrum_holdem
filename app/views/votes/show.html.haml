@@ -8,7 +8,7 @@
   - scores.each do |points, count|
     %tr
       %td
-        %button.btn.btn-info.btn-vote= points
+        %button.btn.btn-info.btn-vote-sm= points
       %td= count
       %td
         = @game.votes.current.where(points: points).map {|v|v.player.name}.join ', '

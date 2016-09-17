@@ -79,13 +79,18 @@ body {
 }
 
 
-.btn-vote {
+.btn-vote-sm {
   width: 42px;
   margin-bottom: 4px;
 }
 
-.btn-vote-name {
+.btn-vote-lg {
   width: 112px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   margin-bottom: 4px;
+  border: 4px black;
+  font-size: 55px;
 }
+
 
